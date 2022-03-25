@@ -1,0 +1,53 @@
+<div class="container" *ngIf="operacao == 'incluir' || operacao == 'alterar'">
+    <form [formGroup]="formulario"  novalidate (ngSubmit)="salvar()">
+    <h1>
+       {{titulo}}
+    </h1>
+
+    <div class="row">
+        <form [formGroup]="formulario"  novalidate>
+        <div class="row">
+        <div class="col-lg-4">
+            <label>Código</label>
+            <input class="form-control" id="exampleFormControlInput1" formControlName="codigo" [(ngModel)]="usuario.id" value="usuario.id">
+            <small *ngIf="formulario.get('codigo')?.valid && formulario.get('codigo')?.touched" class="form-text text-success">Ok</small>
+          <small *ngIf="!formulario.get('codigo')?.valid && formulario.get('codigo')?.touched" class="form-text text-danger">Código invalido</small>
+        </div>
+        <div class="col-lg-4">
+            <label>Descricao</label>
+            <input class="form-control" id="exampleFormControlInput1" formControlName="descricao" [(ngModel)]="usuario.descricao">
+        </div>
+
+        <div class="col-lg-4">
+            <label>Perfil</label>
+            <select class="form-select" [(ngModel)]="usuario.tipo">
+                <option [ngValue]="null" >Selecione uma opção</option>
+                <option *ngFor="let lista of listaPerfil"       
+                value="usuario.tipo" (change)="usuario.tipo" [ngValue]="usuario.tipo">{{lista.codigo + ' - ' +lista.descricao}}</option>
+            </select>
+        </div>
+        </div>
+    </form>
+    </div>
+
+    <div class="row" style="margin-top: 30px;">
+
+      
+        <div class="btn-group">
+            <div class="col-1">
+                <button type="submit" routerLinkActive="active"  routerLink="tela-manter" ronterLink="[/tela-manter]" (click)="salvar()" class="btn btn-primary">Salvar</button>
+            </div>
+            <div class="col-2">
+                <button type="button" (click)="salvarNovo()" class="btn btn-primary">Salvar e criar novo</button>
+            </div>
+            <div class="col-1">
+                <button type="button"  ronterLink="tela-inicial" (click)="voltar()" class="btn btn-danger">Voltar</button>
+            </div>
+        </div>
+
+    </div> 
+
+    </form>
+
+</div>
+

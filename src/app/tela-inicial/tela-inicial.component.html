@@ -1,0 +1,76 @@
+<div class="container" *ngIf="operacao == 'pesquisar'">
+    <h1>
+        Pesquisar Usuário
+    </h1>
+
+
+    <div class="row">
+
+        <div class="col-lg-3">
+            <label>Código</label>
+            <input class="form-control" id="exampleFormControlInput1" [(ngModel)]="usuarios.id">
+        </div>
+        <div class="col-lg-3">
+            <label>Descricao</label>
+            <input class="form-control" id="exampleFormControlInput1" >
+        </div>
+
+        <div class="col-lg-3">
+            <label>Perfil</label>
+            <select class="form-select">
+                <option selected>Selecione uma opção</option>
+                <option *ngFor="let lista of listaPerfil"       
+                value={{lista.codigo}}>{{lista.codigo + ' - ' +lista.descricao}}</option>
+            </select>
+        </div>
+    </div>
+
+    <button type="button" style="margin-top: 40px;" (click)="pesquisarUsuarios()" class="btn btn-primary">Pesquisar</button>
+
+    <div class="row" style="margin-top: 30px;">
+        <div class="table-responsive col-lg-10">
+            <table class="table table-bordered text-center" >
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Código</th>
+                        <th>Descrição</th>
+                        <th>Perfil</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let usuarios of listaUsuarios">
+                        <td>
+                            <input type="radio" name="selecionado" (change)="selecionar(usuarios)"/>
+                        </td>
+                        <td>{{ usuarios.id }}</td>
+                        <td>{{ usuarios.descricao }}</td>
+                        <td>{{ usuarios.tipo }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+      
+        <div class="btn-group">
+            <div class="col-1">
+                <button type="button"  routerLinkActive="router-link-active"  (click)="incluir()" class="btn btn-primary">Incluir</button>
+            </div>
+            <div class="col-1">
+                <button type="button"  [disabled]="desabilitarAlterar" (click)="alterar()"  class="btn btn-primary">Alterar</button>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-danger" (click)="excluir(selecionado)">Excluir</button>
+            </div>
+        </div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+

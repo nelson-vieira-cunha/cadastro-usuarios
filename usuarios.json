@@ -1,0 +1,93 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "descricao": "Nelson",
+      "tipo": "ativo"
+    },
+    {
+      "id": 2,
+      "descricao": "Adriano",
+      "tipo": "inativo"
+    },
+    {
+      "id": 3,
+      "descricao": "Rayana",
+      "tipo": "ativo"
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": "7"
+    },
+    {
+      "id": "10",
+      "descricao": "nelson"
+    },
+    {
+      "id": "11",
+      "descricao": "nelson1"
+    },
+    {
+      "id": "nels",
+      "descricao": "2121s"
+    },
+    {
+      "id": "211",
+      "descricao": "1111"
+    },
+    {
+      "id": "15",
+      "descricao": "funcionario"
+    },
+    {
+      "id": "16 ",
+      "descricao": "funcionario"
+    },
+    {
+      "id": "17",
+      "descricao": "funcionario2"
+    },
+    {
+      "id": "h0K8XWX"
+    },
+    {
+      "id": "111",
+      "descricao": "11"
+    },
+    {
+      "id": "2121",
+      "descricao": "212121"
+    },
+    {
+      "id": "novo ",
+      "descricao": "2121"
+    },
+    {
+      "id": "dyvib5v"
+    },
+    {
+      "id": "18",
+      "descricao": "nelso"
+    },
+    {
+      "id": "20",
+      "descricao": "nelso1"
+    },
+    {
+      "id": "333",
+      "descricao": "nels"
+    },
+    {
+      "id": "155",
+      "descricao": "qualquer"
+    }
+  ]
+}

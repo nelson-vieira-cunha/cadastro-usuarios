@@ -26,8 +26,8 @@ export class UsuariosService {
         .pipe(map(response => response))
   }
 
-  consultar(): Observable<TelaInicial>{
-    return this.http.get<TelaInicial>(this.url_api + '/usuarios')
+  consultar(): Observable<TelaInicial[]>{
+    return this.http.get<TelaInicial[]>(this.url_api + '/usuarios')
     .pipe(retry(10))
     .pipe(map(response => response))
   }

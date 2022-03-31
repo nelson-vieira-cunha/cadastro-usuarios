@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit, Output } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { Observable } from 'rxjs';
 import { UsuariosService } from 'src/usuario.service';
 import { TelaInicial } from './telainicial';
 
@@ -23,7 +24,7 @@ export class TelaInicialComponent implements OnInit {
 
   usuarios!: TelaInicial;
  // public selecionado: UsuarioFiltro;
-  listaUsuarios: any = [] 
+  listaUsuarios$: Observable<TelaInicial[]> | undefined
 
   selecionado!: TelaInicial
 
@@ -38,11 +39,11 @@ export class TelaInicialComponent implements OnInit {
   }
 
   public pesquisarUsuarios(){ 
-   this.usuariosService.consultar().subscribe(
-     (data: {}) => {
+   this.listaUsuarios$ = this.usuariosService.consultar()
+    /* (data: {}) => {
      // let dat = Object.entries(data)
       this.listaUsuarios = data;
-    })
+    })*/
 }
 
 selecionar(valor: TelaInicial){

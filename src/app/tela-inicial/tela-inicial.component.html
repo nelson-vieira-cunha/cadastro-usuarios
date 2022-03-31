@@ -29,7 +29,7 @@
 
     <div class="row" style="margin-top: 30px;">
         <div class="table-responsive col-lg-10">
-            <table class="table table-bordered text-center" >
+            <table class="table table-bordered text-center" *ngIf="listaUsuarios$ | async as listaUsuarios" >             
                 <thead>
                     <tr>
                         <th></th>

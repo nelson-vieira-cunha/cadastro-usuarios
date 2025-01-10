@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, retry } from 'rxjs/operators'
-import { Usuario } from './app/core/models/usuario';
+import { Usuario } from '../../core/models/usuario';
 
 
 //import { URL_API } from './app.api';

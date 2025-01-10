@@ -3,8 +3,9 @@ import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit, Output } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { Observable } from 'rxjs';
-import { UsuariosService } from 'src/usuario.service';
+
 import { Usuario } from '../../models/usuario';
+import { UsuariosService } from 'src/app/shared/services/usuario.service';
 
 
 

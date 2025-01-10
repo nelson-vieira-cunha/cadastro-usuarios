@@ -1,8 +1,9 @@
 import { Component, Input, OnInit, Self } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Route, Router, RouterLinkActive } from '@angular/router';
-import { UsuariosService } from 'src/usuario.service';
+
 import { Usuario } from '../../models/usuario';
+import { UsuariosService } from 'src/app/shared/services/usuario.service';
 
 @Component({
   selector: 'app-tela-manter',

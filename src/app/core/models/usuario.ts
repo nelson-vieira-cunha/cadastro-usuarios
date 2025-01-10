@@ -1,4 +1,4 @@
-export class TelaInicial{
+export class Usuario{
 
     id!:  any
     descricao!: string 

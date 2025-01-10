@@ -3,7 +3,8 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, retry } from 'rxjs/operators'
-import { TelaInicial } from './app/tela-inicial/telainicial';
+import { Usuario } from './app/core/models/usuario';
+
 
 //import { URL_API } from './app.api';
 
@@ -20,39 +21,39 @@ export class UsuariosService {
   }
 
 
-  public pesquisaOfertas(telaInicial: TelaInicial){
+  public pesquisaOfertas(Usuario: Usuario){
     return this.http.get(`${this.url_api}`)
         .pipe(retry(10))
         .pipe(map(response => response))
   }
 
-  consultar(): Observable<TelaInicial[]>{
-    return this.http.get<TelaInicial[]>(this.url_api + '/usuarios')
+  consultar(): Observable<Usuario[]>{
+    return this.http.get<Usuario[]>(this.url_api + '/usuarios')
     .pipe(retry(10))
     .pipe(map(response => response))
   }
 
-  consultarId(id: any): Observable<TelaInicial>{
-    return this.http.get<TelaInicial>(this.url_api + '/usuarios/' + id)
+  consultarId(id: any): Observable<Usuario>{
+    return this.http.get<Usuario>(this.url_api + '/usuarios/' + id)
     .pipe(retry(10))
     .pipe(map(response => response))
   }
 
   excluir(id: any){
-    return this.http.delete<TelaInicial>(this.url_api + '/usuarios/' + id, this.httpOptions)
+    return this.http.delete<Usuario>(this.url_api + '/usuarios/' + id, this.httpOptions)
     .pipe(retry(10))
     .pipe(map(response => response))
   }
 
-  incluir(usuario: any): Observable<TelaInicial>{
-    return this.http.post<TelaInicial>(this.url_api + '/usuarios',
+  incluir(usuario: any): Observable<Usuario>{
+    return this.http.post<Usuario>(this.url_api + '/usuarios',
     JSON.stringify(usuario), this.httpOptions)
     .pipe(retry(10))
     .pipe(map(response => response))
   }
 
-  alterar(id: any): Observable<TelaInicial>{
-    return this.http.put<TelaInicial>(this.url_api + '/usuarios' + id,
+  alterar(id: any): Observable<Usuario>{
+    return this.http.put<Usuario>(this.url_api + '/usuarios' + id,
     JSON.stringify(id), this.httpOptions)
     .pipe(retry(10))
     .pipe(map(response => response))

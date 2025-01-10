@@ -6,8 +6,9 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TelaInicialComponent } from './tela-inicial/tela-inicial.component';
-import { TelaManterComponent } from './tela-manter/tela-manter.component';
+import { TelaManterComponent } from './core/pages/tela-manter/tela-manter.component';
+import { TelaInicialComponent } from './core/pages/tela-inicial/tela-inicial.component';
+
 
 @NgModule({
   declarations: [

@@ -1,8 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Self } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Route, Router, RouterLinkActive } from '@angular/router';
 import { UsuariosService } from 'src/usuario.service';
-import { TelaInicial } from '../tela-inicial/telainicial';
+import { Usuario } from '../../models/usuario';
 
 @Component({
   selector: 'app-tela-manter',
@@ -13,13 +13,13 @@ export class TelaManterComponent implements OnInit {
 
   operacao = "incluir"
 
-  selecionado!: TelaInicial
+  selecionado!: Usuario
 
 
   listaPerfil: any[] = [{'codigo':'nel','descricao':'nelson'},{'codigo':'adri', 'descricao':'adriana'}]
-  usuario: TelaInicial = new TelaInicial();
+  usuario: Usuario = new Usuario();
   // public selecionado: UsuarioFiltro;
-   listaUsuarios: TelaInicial[] = []
+   listaUsuarios: Usuario[] = []
 
    id: any
 
@@ -60,7 +60,7 @@ definiritulo(){
    this.usuario.id = this.id
    this.usuariosService.consultarId(this.usuario.id).subscribe(
     data => {
-      this.usuario = (<TelaInicial>data);
+      this.usuario = (<Usuario>data);
     }
    )
  }else{
@@ -86,7 +86,7 @@ selecionarTipo(valor: string){
   }
 
   limpar(){
-    this.usuario = new TelaInicial()
+    this.usuario = new Usuario()
   }
   
 

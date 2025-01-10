@@ -4,7 +4,8 @@ import { Component, OnInit, Output } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UsuariosService } from 'src/usuario.service';
-import { TelaInicial } from './telainicial';
+import { Usuario } from '../../models/usuario';
+
 
 
 @Component({
@@ -22,18 +23,18 @@ export class TelaInicialComponent implements OnInit {
 
   listaPerfil: any[] = [{'codigo':'nel','descricao':'nelson'},{'codigo':'adri', 'descricao':'adriana'}]
 
-  usuarios!: TelaInicial;
+  usuarios!: Usuario;
  // public selecionado: UsuarioFiltro;
-  listaUsuarios$: Observable<TelaInicial[]> | undefined
+  listaUsuarios$: Observable<Usuario[]> | undefined
 
-  selecionado!: TelaInicial
+  selecionado!: Usuario
 
 
   public operacao: string = ""
   //@Input() operacao!: any
 
   ngOnInit(): void {
-    this.usuarios = new TelaInicial();
+    this.usuarios = new Usuario();
     this.operacao = "pesquisar"
    // this.pesquisarUsuarios()
   }
@@ -46,7 +47,7 @@ export class TelaInicialComponent implements OnInit {
     })*/
 }
 
-selecionar(valor: TelaInicial){
+selecionar(valor: Usuario){
   this.selecionado = valor
   if(valor.id != null){
     this.desabilitarAlterar = false
@@ -76,7 +77,7 @@ public excluir(id: any): void{
 }
 
 limpar(){
-  this.usuarios = new TelaInicial()
+  this.usuarios = new Usuario()
 }
 }
 
